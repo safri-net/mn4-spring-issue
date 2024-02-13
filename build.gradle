@@ -31,6 +31,12 @@ dependencies {
 }
 
 
+configurations.all {
+    resolutionStrategy {
+        force "io.micronaut.spring:micronaut-spring-annotation:5.4.1"
+    }
+}
+
 application {
     mainClass.set("com.example.Application")
 }
