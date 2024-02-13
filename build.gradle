@@ -1,7 +1,7 @@
 plugins {
     id("groovy") 
     id("com.github.johnrengelman.shadow") version "8.1.1"
-    id("io.micronaut.application") version "4.2.1"
+    id("io.micronaut.application") version "4.3.2"
 }
 
 version = "0.1"
@@ -30,6 +30,12 @@ dependencies {
     testCompileOnly("io.micronaut.spring:micronaut-spring-boot-annotation")
 }
 
+
+configurations.all {
+    resolutionStrategy {
+        force "io.micronaut.spring:micronaut-spring-annotation:5.4.1"
+    }
+}
 
 application {
     mainClass.set("com.example.Application")
